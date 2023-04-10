@@ -23,7 +23,7 @@ def hh_vacs(vac):
         data['sallary'] = vac.xpath("../../../span/text()")
         data['site'] = URL
         vac_list.append(data)
-    return data
+    return vac_list
 
 
 def superjob_vacs(vac):
@@ -37,10 +37,19 @@ def superjob_vacs(vac):
     dom = html.fromstring(responce.content)
     vacs = dom.xpath('//div[@class="f-test-search-result-item"]')
 
+    vacs_list = []
     for vac in vacs:
-        print(vac.xpath('/a'))
-
+        data = {}
+        data['name'] = vac.xpath('./div/div/div/div/div/div/div/div/div/div/div/span/a/text()')
+        data['link'] =vac.xpath('./div/div/div/div/div/div/div/div/div/div/div/span/a/@href')
+        data['sallary']= vac.xpath(
+            'div/div/div/div/div/div/div/div/div/div/div/div/div/span/text()')
+        data['site'] = URL
+        vacs_list.append(data)
+    return vacs_list
 
 if __name__ == '__main__':
     vac = input('Введите название вакансии\n')
-    superjob_vacs(vac)
+    print(superjob_vacs(vac))
+    print('*'*100)
+    print(hh_vacs(vac))
