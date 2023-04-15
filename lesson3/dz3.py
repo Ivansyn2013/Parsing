@@ -3,14 +3,42 @@ import requests
 from time import sleep
 from requests.exceptions import ConnectionError
 from pprint import pprint
+from pymongo import MongoClient
+
+
+def init_db_session():
+    client = MongoClient("mongodb://root:example@0.0.0.0:22222/")
+    db = client['vacations']
+    session = db['vacations']
+    return session
+
+
+def write_in_db(session, data):
+    session.insert_many(data)
+
+
+def read_db(session):
+    result = session.find()
+    for i in result:
+        print(i)
 
 
 def init_vac():
+    '''
+    get vac name from user and start programm
+    :return:
+    '''
     vac_name = input('Введите название вакансии:')
     return hh_vacs(vac_name)
 
 
 def hh_vacs(vac, delay=2):
+    '''
+    create request
+    :param vac: vacation name
+    :param delay: delay for requset
+    :return: responce
+    '''
     URL = 'https://hh.ru/search/vacancy'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0'}
@@ -19,7 +47,6 @@ def hh_vacs(vac, delay=2):
 
     responce = requests.get(URL, headers=headers, params=params)
 
-    print(type(responce.status_code))
     sleep(delay)
 
     if responce.status_code == 200:
@@ -28,6 +55,11 @@ def hh_vacs(vac, delay=2):
 
 
 def parsing_bs4(responce):
+    '''
+    start parsing
+    :param responce:
+    :return: list with dicts
+    '''
     soup = bs(responce.content, 'html.parser')
     list_of_main_div = soup.find_all('div', {'class': 'serp-item'})
     result = []
@@ -48,4 +80,9 @@ def parsing_bs4(responce):
 
 
 if __name__ == '__main__':
-    print(init_vac())
+    data = init_vac()
+    session = init_db_session()
+    print('*' * 30)
+    write_in_db(session, data)
+    print('*' * 30)
+    read_db(session)
