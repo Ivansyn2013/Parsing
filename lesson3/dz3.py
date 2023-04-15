@@ -4,6 +4,7 @@ from time import sleep
 from requests.exceptions import ConnectionError
 from pprint import pprint
 from pymongo import MongoClient
+import re
 
 
 def init_db_session():
@@ -18,7 +19,16 @@ def write_in_db(session, data):
 
 
 def read_db(session):
-    result = session.find()
+    suspend_salaty = int(input('Введи желаемую зарплату\n'))
+    if suspend_salaty == 0 or '':
+        result = session.find()
+    else:
+        salary_filter = {"salary.0":
+                             {"$lte": suspend_salaty},
+                         "salary.1":
+                             {"$gte": suspend_salaty}}
+        result = session.find(salary_filter)
+
     for i in result:
         print(i)
 
@@ -72,7 +82,9 @@ def parsing_bs4(responce):
             if element.previous_sibling:
                 try:
                     if 'bloko-v-spacing' in element.previous_sibling.get('class'):
-                        data['salary'] = element.text
+                        salary = re.findall(r'\d+', element.text.replace('\u202f', ''))
+                        salary_forg = [int(x) for x in salary]
+                        data['salary'] = sorted(salary_forg)
                 except AttributeError:
                     pass
         result.append(data)
@@ -80,9 +92,9 @@ def parsing_bs4(responce):
 
 
 if __name__ == '__main__':
-    data = init_vac()
+    # data = init_vac()
     session = init_db_session()
     print('*' * 30)
-    write_in_db(session, data)
+    # write_in_db(session, data)
     print('*' * 30)
     read_db(session)
