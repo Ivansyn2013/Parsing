@@ -5,3 +5,6 @@ def init_db_session():
     db = client['vacations']
     session = db['vacations']
     return session
+
+def write_in_db(session, data):
+    session.insert_many(data)
