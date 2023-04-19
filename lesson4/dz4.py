@@ -16,7 +16,6 @@ def pasing_news_lenta():
     news = dom.xpath('//div[2]/div[3]/main/div/section[1]/div[1]/div['
                      '1]/div/a/div/span')
 
-    session = init_db_session()
     news_list = []
     for num, el in enumerate(news):
         new = el.xpath('./text()')[0].encode('iso-8859-1').decode('utf-8')
@@ -24,7 +23,7 @@ def pasing_news_lenta():
         news_dict = {'number': num,
                      'news': new
                      }
-        news_list.append(news_list)
+        news_list.append(news_dict)
 
     session = init_db_session()
     write_in_db(session, news_list)
@@ -33,4 +32,4 @@ def pasing_news_lenta():
 if __name__=='__main__':
     session = init_db_session()
     pasing_news_lenta()
-    print(read_db(session))
+    print([x for x in read_db(session)])
