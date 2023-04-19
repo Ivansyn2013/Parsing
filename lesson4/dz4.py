@@ -1,5 +1,5 @@
 from lxml import html
-from db_utils import write_in_db, init_db_session
+from db_utils import write_in_db, init_db_session, read_db
 import requests
 def pasing_news_lenta():
     URL = 'https://lenta.ru/'
@@ -16,10 +16,21 @@ def pasing_news_lenta():
     news = dom.xpath('//div[2]/div[3]/main/div/section[1]/div[1]/div['
                      '1]/div/a/div/span')
 
-    for el in news:
-        print(el.xpath('./text()'))
-        break
+    session = init_db_session()
+    news_list = []
+    for num, el in enumerate(news):
+        new = el.xpath('./text()')[0].encode('iso-8859-1').decode('utf-8')
+        print(new)
+        news_dict = {'number': num,
+                     'news': new
+                     }
+        news_list.append(news_list)
+
+    session = init_db_session()
+    write_in_db(session, news_list)
+
 
 if __name__=='__main__':
-
+    session = init_db_session()
     pasing_news_lenta()
+    print(read_db(session))
