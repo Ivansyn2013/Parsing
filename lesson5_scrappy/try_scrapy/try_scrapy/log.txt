@@ -264,3 +264,57 @@ TypeError: Cannot mix str and non-str arguments
  'scheduler/enqueued/memory': 2,
  'start_time': datetime.datetime(2023, 5, 3, 19, 6, 4, 353118)}
 2023-05-03 22:06:06 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-05-04 00:57:46 [scrapy.extensions.telnet] INFO: Telnet Password: 7ee7ce33e3f73383
+2023-05-04 00:57:46 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-05-04 00:57:46 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-05-04 00:57:46 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-05-04 00:57:46 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2023-05-04 00:57:46 [scrapy.core.engine] INFO: Spider opened
+2023-05-04 00:57:46 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-05-04 00:57:46 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-05-04 00:57:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205> (referer: None)
+2023-05-04 00:57:47 [scrapy.core.scraper] ERROR: Spider must return request, item, or None, got 'str' in <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205>
+2023-05-04 00:57:47 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-05-04 00:57:47 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 283,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 38281,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.784213,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 5, 3, 21, 57, 47, 552294),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 3382509568,
+ 'memusage/startup': 3382509568,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 5, 3, 21, 57, 46, 768081)}
+2023-05-04 00:57:47 [scrapy.core.engine] INFO: Spider closed (finished)
