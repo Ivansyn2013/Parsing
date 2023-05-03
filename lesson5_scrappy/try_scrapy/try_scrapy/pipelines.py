@@ -8,6 +8,7 @@
 from itemadapter import ItemAdapter
 
 
+
 class TryScrapyPipeline:
     def process_item(self, item, spider):
         return item

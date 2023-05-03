@@ -1,0 +1,266 @@
+2023-05-03 21:44:53 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: try_scrapy)
+2023-05-03 21:44:53 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0], pyOpenSSL 23.1.1 (OpenSSL 3.1.0 14 Mar 2023), cryptography 40.0.2, Platform Linux-5.15.0-67-generic-x86_64-with-glibc2.35
+2023-05-03 21:45:26 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: try_scrapy)
+2023-05-03 21:45:26 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0], pyOpenSSL 23.1.1 (OpenSSL 3.1.0 14 Mar 2023), cryptography 40.0.2, Platform Linux-5.15.0-67-generic-x86_64-with-glibc2.35
+2023-05-03 21:45:26 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'try_scrapy',
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log.txt',
+ 'NEWSPIDER_MODULE': 'try_scrapy.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['try_scrapy.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+2023-05-03 21:45:26 [asyncio] DEBUG: Using selector: EpollSelector
+2023-05-03 21:45:26 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-05-03 21:45:26 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-05-03 21:45:26 [scrapy.extensions.telnet] INFO: Telnet Password: 426accf9cc0bfa40
+2023-05-03 21:45:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-05-03 21:45:27 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-05-03 21:45:27 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-05-03 21:45:27 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2023-05-03 21:45:27 [scrapy.core.engine] INFO: Spider opened
+2023-05-03 21:45:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-05-03 21:45:27 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-05-03 21:45:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://krasnogorsk.hh.ru/vacancies/programmist> from <GET https://hh.ru/vacancies/programmist>
+2023-05-03 21:45:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://krasnogorsk.hh.ru/vacancies/programmist> (referer: None)
+2023-05-03 21:45:29 [py.warnings] WARNING: /home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/selector/unified.py:83: UserWarning: Selector got both text and root, root is being ignored.
+  super().__init__(text=text, type=st, root=root, **kwargs)
+
+2023-05-03 21:45:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://krasnogorsk.hh.ru/vacancies/programmist> (referer: None)
+Traceback (most recent call last):
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/utils/defer.py", line 257, in iter_errback
+    yield next(it)
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/utils/python.py", line 312, in __next__
+    return next(self.data)
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/utils/python.py", line 312, in __next__
+    return next(self.data)
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/spidermiddlewares/offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/spidermiddlewares/referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/home/user/PycharmProjects/Parsing/lesson5_scrappy/try_scrapy/try_scrapy/spiders/Hhrau.py", line 13, in parse
+    yield response.follow(next_page, callback=self.parse)
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/http/response/text.py", line 186, in follow
+    return super().follow(
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/http/response/__init__.py", line 184, in follow
+    url = self.urljoin(url)
+  File "/home/user/PycharmProjects/Parsing/venv/lib/python3.10/site-packages/scrapy/http/response/text.py", line 99, in urljoin
+    return urljoin(get_base_url(self), url)
+  File "/usr/lib/python3.10/urllib/parse.py", line 532, in urljoin
+    base, url, _coerce_result = _coerce_args(base, url)
+  File "/usr/lib/python3.10/urllib/parse.py", line 125, in _coerce_args
+    raise TypeError("Cannot mix str and non-str arguments")
+TypeError: Cannot mix str and non-str arguments
+2023-05-03 21:45:29 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-05-03 21:45:29 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 836,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 124108,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 2.325939,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 5, 3, 18, 45, 29, 409168),
+ 'httpcompression/response_bytes': 844868,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 5,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 66306048,
+ 'memusage/startup': 66306048,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2023, 5, 3, 18, 45, 27, 83229)}
+2023-05-03 21:45:29 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-05-03 22:00:10 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: try_scrapy)
+2023-05-03 22:00:10 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0], pyOpenSSL 23.1.1 (OpenSSL 3.1.0 14 Mar 2023), cryptography 40.0.2, Platform Linux-5.15.0-67-generic-x86_64-with-glibc2.35
+2023-05-03 22:03:40 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: try_scrapy)
+2023-05-03 22:03:40 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0], pyOpenSSL 23.1.1 (OpenSSL 3.1.0 14 Mar 2023), cryptography 40.0.2, Platform Linux-5.15.0-67-generic-x86_64-with-glibc2.35
+2023-05-03 22:03:40 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'try_scrapy',
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log.txt',
+ 'NEWSPIDER_MODULE': 'try_scrapy.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['try_scrapy.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+2023-05-03 22:03:40 [asyncio] DEBUG: Using selector: EpollSelector
+2023-05-03 22:03:40 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-05-03 22:03:40 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-05-03 22:03:40 [scrapy.extensions.telnet] INFO: Telnet Password: dca4508977d9fd9e
+2023-05-03 22:03:40 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-05-03 22:03:40 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-05-03 22:03:40 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-05-03 22:03:40 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2023-05-03 22:03:40 [scrapy.core.engine] INFO: Spider opened
+2023-05-03 22:03:40 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-05-03 22:03:40 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-05-03 22:03:40 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205> from <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205>
+2023-05-03 22:03:41 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205> (referer: None)
+2023-05-03 22:03:41 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <403 https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205>: HTTP status code is not handled or not allowed
+2023-05-03 22:03:41 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-05-03 22:03:41 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 706,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 599,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/302': 1,
+ 'downloader/response_status_count/403': 1,
+ 'elapsed_time_seconds': 1.174849,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 5, 3, 19, 3, 41, 603881),
+ 'httperror/response_ignored_count': 1,
+ 'httperror/response_ignored_status_count/403': 1,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 11,
+ 'memusage/max': 66408448,
+ 'memusage/startup': 66408448,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2023, 5, 3, 19, 3, 40, 429032)}
+2023-05-03 22:03:41 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-05-03 22:06:04 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: try_scrapy)
+2023-05-03 22:06:04 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0], pyOpenSSL 23.1.1 (OpenSSL 3.1.0 14 Mar 2023), cryptography 40.0.2, Platform Linux-5.15.0-67-generic-x86_64-with-glibc2.35
+2023-05-03 22:06:04 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'try_scrapy',
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log.txt',
+ 'NEWSPIDER_MODULE': 'try_scrapy.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['try_scrapy.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 '
+               'Firefox/110.0'}
+2023-05-03 22:06:04 [asyncio] DEBUG: Using selector: EpollSelector
+2023-05-03 22:06:04 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-05-03 22:06:04 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-05-03 22:06:04 [scrapy.extensions.telnet] INFO: Telnet Password: 858903d163fd40d1
+2023-05-03 22:06:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-05-03 22:06:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-05-03 22:06:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-05-03 22:06:04 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2023-05-03 22:06:04 [scrapy.core.engine] INFO: Spider opened
+2023-05-03 22:06:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-05-03 22:06:04 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-05-03 22:06:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205> from <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205>
+2023-05-03 22:06:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205> (referer: None)
+2023-05-03 22:06:06 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-05-03 22:06:06 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 616,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 19564,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 2.023094,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 5, 3, 19, 6, 6, 376212),
+ 'httpcompression/response_bytes': 43806,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 10,
+ 'memusage/max': 66318336,
+ 'memusage/startup': 66318336,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2023, 5, 3, 19, 6, 4, 353118)}
+2023-05-03 22:06:06 [scrapy.core.engine] INFO: Spider closed (finished)

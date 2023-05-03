@@ -5,6 +5,8 @@
 
 import scrapy
 
+class Jobparser(scrapy.Item):
+    pass
 
 class TryScrapyItem(scrapy.Item):
     # define the fields for your item here like:
