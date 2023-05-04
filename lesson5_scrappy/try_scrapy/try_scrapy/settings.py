@@ -94,6 +94,6 @@ DOWNLOAD_DELAY = 1
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 
 #ошибка с установкой реактора
-#TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
-TWISTED_REACTOR = 'twisted.internet.epollreactor.EPollReactor'
+TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
+#TWISTED_REACTOR = 'twisted.internet.epollreactor.EPollReactor'
 FEED_EXPORT_ENCODING = "utf-8"
