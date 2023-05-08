@@ -8,6 +8,7 @@
 from itemadapter import ItemAdapter
 from pymongo import MongoClient
 from scrapy.pipelines.images import ImagesPipeline
+from scrapy import Request
 
 class LabirintBooksPipeline:
     def __init__(self):
@@ -15,10 +16,24 @@ class LabirintBooksPipeline:
         self.mongo_db = client.mongo_db
 
     def process_item(self, item, spider):
-        collection = self.mongo_db[spider.name]
-        collection.insert_one(item)
-        # print(item)
-        # print('*'*10)
-        # print(spider)
+        #collection = self.mongo_db[spider.name]
+        #collection.insert_one(item)
+        print(item)
+        print('*'*10)
+        print(spider)
 
         return item
+
+class SaveImages(ImagesPipeline):
+    def get_images(self, response, request, info, *, item=None):
+        if item['img_ref']:
+            try:
+                yield Request(item['img_ref'][0])
+            except Exception as error:
+                print(error)
+    def get_media_requests(self, item, info):
+        if item['img_ref']:
+            try:
+                yield Request(item['img_ref'][0])
+            except Exception as error:
+                print(error)

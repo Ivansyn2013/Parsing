@@ -1,6 +1,8 @@
 import scrapy
 from scrapy.http import HtmlResponse
 from scrapy.loader import ItemLoader
+import sys
+sys.path.append("..")
 from ..items import LabirintBooksItem
 class LabirintSpider(scrapy.Spider):
     name = "labirint"
@@ -18,7 +20,6 @@ class LabirintSpider(scrapy.Spider):
         books = response.xpath(x_path_str).getall()
 
         for index, book in enumerate(books):
-            print(book)
             #ограничение парсинга
             if index > 2:
                 break
@@ -29,11 +30,11 @@ class LabirintSpider(scrapy.Spider):
         loader = ItemLoader(item=LabirintBooksItem(), response=responce)
         loader.add_value('link', responce.url)
         x_path_name = '//h1/text()'
-        x_path_authors = '//div[@class="authors"]/text()'
+        x_path_authors = '//div[@class="authors"]/a/text()'
         x_path_general_price = '//span[@class="buying-priceold-val-number"]/text()'
         x_path_small_price = '//span[@class="buying-pricenew-val-number"]/text()'
         x_path_rate = '//div[@id="rate"]/text()'
-        x_path_img = '//img[@class="book-img-cover"]/@src'
+        x_path_img = '//img[@class="book-img-cover"]/@data-src'
 
         loader.add_xpath('name', x_path_name)
         loader.add_xpath('authors', x_path_authors)
@@ -42,5 +43,4 @@ class LabirintSpider(scrapy.Spider):
         loader.add_xpath('rate', x_path_rate)
         loader.add_xpath('img_ref', x_path_img)
 
-        print('8'*10)
-        print(responce.url)
+        yield loader.load_item()

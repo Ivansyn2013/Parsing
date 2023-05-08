@@ -7,7 +7,8 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 from pymongo import MongoClient
-
+from scrapy.pipelines.images import ImagesPipeline
+from scrapy import Request
 
 class TryScrapyPipeline:
     def __init__(self):
@@ -21,3 +22,6 @@ class TryScrapyPipeline:
         #print(spider)
 
         return item
+
+
+
