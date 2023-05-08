@@ -8,5 +8,11 @@ import scrapy
 
 class LabirintBooksItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    link = scrapy.Field()
+    authors = scrapy.Field()
+    general_price = scrapy.Field()
+    small_price = scrapy.Field()
+    rate = scrapy.Field()
+    img_ref = scrapy.Field()
+    _id = scrapy.Field()
